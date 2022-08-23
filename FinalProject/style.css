@@ -27,6 +27,12 @@
     pointer-events: none;
 }
 
+.newbtn {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
 /* Whack a mole */
 
 #grid {
@@ -78,6 +84,6 @@ img {
 }
 
 .right-margin {
-    margin-left: 50px;
+    margin: 0 50px;    
 }
 

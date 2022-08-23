@@ -177,9 +177,16 @@ function revealFirst(){
     }
 }
 
-function startGame(){
-    
-}
+// function startMinesweeper(){
+//     document.addEventListener("contextmenu", function (e) { e.preventDefault(); }, false);
+//     createMineField();
+//     getMinesLocations();
+//     setMineLocation();
+//     addNeighbourCount();
+//     revealFirst();
+
+//     return true;
+// }
 
 window.addEventListener('DOMContentLoaded', () => {
     document.addEventListener("contextmenu", function (e) { e.preventDefault(); }, false);
