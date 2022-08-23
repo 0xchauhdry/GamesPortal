@@ -11,13 +11,14 @@
 
         <div>
             <h2 class="inline">
-            Flags:<span id="flags">0</span>
+                Flags:<span id="flags">0</span>
             </h2>
             <h2 class="inline right-margin">
-            Time:<span id="timer">00</span>
+                Time:<span id="timer">00</span>
             </h2>
             <h2 class="inline newbtn">
-            Start</h2>
+                Start
+            </h2>
         </div>
         <br>
 

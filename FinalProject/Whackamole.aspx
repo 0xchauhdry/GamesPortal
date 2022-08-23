@@ -9,10 +9,13 @@
         <hr>
         <div>
             <h2 class="inline">
-            Score:<span id="result">0</span>
+                Score:<span id="result">0</span>
             </h2>
             <h2 class="inline right-margin">
-            Time left:<span id="time-left">60</span>
+                Time left:<span id="time-left">60</span>
+            </h2>
+            <h2 class="inline newbtn">
+                Start
             </h2>
         </div>
         <br>

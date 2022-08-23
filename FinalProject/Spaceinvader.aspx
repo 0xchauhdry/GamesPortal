@@ -8,8 +8,18 @@
         <asp:Button id="btnStart" runat="server" Text="Start" Height="30px" Width="50px"/>
         <hr>
 
-        <h2> Score: <span id="result" >0</span>
-        </h2><br>
+        <div>
+            <h2 class="inline">
+                Score:<span id="result">0</span>
+            </h2>
+            <h2 class="inline right-margin">
+                Time:<span id="timer">00</span>
+            </h2>
+            <h2 class="inline newbtn">
+                Start
+            </h2>
+        </div>
+        <br>
 
         <div id="Space-grid"></div>
     </section>

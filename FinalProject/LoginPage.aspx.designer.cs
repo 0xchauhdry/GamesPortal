@@ -15,13 +15,13 @@ namespace FinalProject
     {
 
         /// <summary>
-        /// EmpStatus control.
+        /// usrStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList EmpStatus;
+        protected global::System.Web.UI.WebControls.DropDownList usrStatus;
 
         /// <summary>
         /// fchild control.
@@ -49,5 +49,14 @@ namespace FinalProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password;
+
+        /// <summary>
+        /// button control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button button;
     }
 }
