@@ -8,7 +8,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="style.css" rel="stylesheet" />
+    <link href="Style/style.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -32,6 +32,9 @@
                         <li><a runat="server" href="~/Spaceinvader.aspx">Space Invader</a></li>
                         <li><a runat="server" href="~/Whackamole.aspx">Whack A Mole</a></li>
                     </ul>
+                </div>  
+                <div class="floatdiv">
+                    <asp:LinkButton ID="LogOutBtn" runat="server" class="btn btn-primary" onclick="LogOut">Log Out</asp:LinkButton>
                 </div>
             </div>
         </div>

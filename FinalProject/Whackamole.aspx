@@ -1,11 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Whackamole.aspx.cs" Inherits="FinalProject.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <hr>
+    <hr class="margintop">
 </asp:Content>
 <asp:Content ID="Whackamole" ContentPlaceHolderID="MainContent" runat="server">
     <section >
         <h1>Whack A Mole</h1>
-        <asp:Button id="btnStart" runat="server" Text="Start" Height="30px" Width="50px"/>
         <hr>
         <div>
             <h2 class="inline">
@@ -20,6 +19,6 @@
         </div>
         <br>
 
-        <div id="grid"></div>
+        <div id="gridWac"></div>
     </section>
 </asp:Content>

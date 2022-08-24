@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Minesweeper" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Minesweeper.aspx.cs" Inherits="FinalProject.WebForm2" %>
 <asp:Content ID="head1" ContentPlaceHolderID="head" runat="server">
-    <hr>
+    <hr class="margintop">
 </asp:Content>
 <asp:Content ID="Minesweeper" ContentPlaceHolderID="MainContent" runat="server">
     

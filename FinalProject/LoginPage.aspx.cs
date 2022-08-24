@@ -10,7 +10,7 @@ using System.Web.Script.Serialization;
 
 namespace FinalProject
 {
-    public partial class WebForm5 : System.Web.UI.Page
+    public partial class WebForm7 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,18 +32,18 @@ namespace FinalProject
             string passWord = password.Text;
             if (usrStatus.SelectedValue == "Login As")
             {
-                Response.Write("<script>alert('You want to Login as Admin or User? Please Select one option to proceed')</script>");
+                Response.Write("<script defer>alert('You want to Login as Admin or User? Please Select one option to proceed')</script>");
             }
 
             if (usrStatus.SelectedValue == "Admin")
             {
                 if (username != "chauhdry")
                 {
-                    Response.Write("<script>alert('username is not correct!')</script>"); //works great
+                    Response.Write("<script defer>alert('username is not correct!')</script>"); //works great
                 }
                 else if (passWord != "jinnah")
                 {
-                    Response.Write("<script>alert('password is not correct!')</script>"); //works great
+                    Response.Write("<script defer>alert('password is not correct!')</script>"); //works great
                 }
                 else
                 {
@@ -53,32 +53,31 @@ namespace FinalProject
                 }
             }
 
-            //if (usrStatus.SelectedValue == "User")
-            //{
-            //    //DataBase dataBase = new DataBase();
-            //    DataTable data = new DataBase().Authentication(username);
+            if (usrStatus.SelectedValue == "User")
+            {
+                DataTable data = new DataBase().Authentication(username);
 
-            //    if (data.Rows.Count > 0)
-            //    {
-            //        foreach (DataRow row in data.Rows)
-            //        {
-            //            if (passWord != row["password"].ToString())
-            //            {
-            //                Response.Write("<script>alert('password is not correct!')</script>"); //works great
-            //            }
-            //            else
-            //            {
-            //                Session["accountantusername"] = username;
-            //                Session["accountantpassword"] = passWord;
-            //                Response.Redirect("Accountant.aspx");
-            //            }
-            //        }
-            //    }
-            //    else
-            //    {
-            //        Response.Write("<script>alert('username is not correct!')</script>");
-            //    }
-            //}
+                if (data.Rows.Count > 0)
+                {
+                    foreach (DataRow row in data.Rows)
+                    {
+                        if (passWord != row["password"].ToString())
+                        {
+                            Response.Write("<script>alert('password is not correct!')</script>"); //works great
+                        }
+                        else
+                        {
+                            Session["accountantusername"] = username;
+                            Session["accountantpassword"] = passWord;
+                            Response.Redirect("Default.aspx");
+                        }
+                    }
+                }
+                else
+                {
+                    Response.Write("<script>alert('username is not correct!')</script>");
+                }
+            }
         }
     }
 }

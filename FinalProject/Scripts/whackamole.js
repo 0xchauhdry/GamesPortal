@@ -1,5 +1,5 @@
 ﻿// initization
-const grid = document.querySelector('#grid')
+const grid = document.querySelector('#gridWac')
 let score = document.querySelector('#result')
 const timeLeft = document.querySelector('#time-left')
 const startBtnW = document.querySelector('.startBtnW')
@@ -20,11 +20,10 @@ function createBoard() {
 }
 
 // assigning random grid and whacin it
-
 let cards = document.querySelectorAll('img')
 
 function selectingGrid() {
-    remover()
+    removerM()
 
     let cards = document.querySelectorAll('img')
     let randomNum = Math.floor(Math.random() * 9)
@@ -33,22 +32,21 @@ function selectingGrid() {
     thatCard.addEventListener('click', whac)
 }
 
-function remover() {
+function removerM() {
     let cards = document.querySelectorAll('img')
     cards.forEach(card => {
         card.setAttribute('src', 'img/white.png')
         card.removeEventListener('click', whac)
     })
 }
-// whac function to find the result 
 
+// whac function to find the result 
 function whac() {
     result++
     score.innerHTML = result
 }
 
 // repeat the it after every .5 sec
-
 function movingMole() {
     timerId = setInterval(selectingGrid, 500)
 }
@@ -62,7 +60,7 @@ function countDown() {
     if (currentTime === 0) {
         clearInterval(countDownTimerId)
         clearInterval(timerId)
-        remover()
+        removerM()
         alert('GAME OVER! Your final score is ' + result)
     }
 }

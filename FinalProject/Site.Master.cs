@@ -11,7 +11,15 @@ namespace FinalProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["adminusername"] == null && Session["accountantusername"] == null)
+            {
+                Response.Redirect("LogInPage.aspx");
+            }
+        }
+        protected void LogOut(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("LogInPage.aspx");
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="FinalProject.WebForm1" %>
 <asp:Content ID="Home" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="jumbotron">
+    <div class="jumbotron margintop">
         <h1>Play Games</h1>
         <p class="lead">Here are three very fun, arcade games which you can play right now.</p>
     </div>

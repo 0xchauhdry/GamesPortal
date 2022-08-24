@@ -11,35 +11,53 @@ namespace FinalProject
 {
 
 
-    public partial class WebForm7
+    public partial class SignUpPage
     {
 
         /// <summary>
-        /// LoginForm control.
+        /// SigninForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm LoginForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm SigninForm;
 
         /// <summary>
-        /// usrStatus control.
+        /// name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList usrStatus;
+        protected global::System.Web.UI.WebControls.TextBox name;
 
         /// <summary>
-        /// fchild control.
+        /// reqName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListItem fchild;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqName;
+
+        /// <summary>
+        /// email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox email;
+
+        /// <summary>
+        /// reqEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqEmail;
 
         /// <summary>
         /// userName control.
@@ -51,6 +69,15 @@ namespace FinalProject
         protected global::System.Web.UI.WebControls.TextBox userName;
 
         /// <summary>
+        /// reqUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqUsername;
+
+        /// <summary>
         /// password control.
         /// </summary>
         /// <remarks>
@@ -60,12 +87,21 @@ namespace FinalProject
         protected global::System.Web.UI.WebControls.TextBox password;
 
         /// <summary>
-        /// loginBtn control.
+        /// reqPass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button loginBtn;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPass;
+
+        /// <summary>
+        /// signUpBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button signUpBtn;
     }
 }

@@ -5,7 +5,7 @@
     height: 455px;
     background: white;
     border: 3px solid black;
-}
+} 
 
 .mineField {
     width: 50px;
@@ -39,7 +39,7 @@
 
 /* Whack a mole */
 
-#grid {
+#gridWac {
     display: flex;
     flex-wrap: wrap;
     width: 460px;
@@ -84,6 +84,8 @@ img {
     background: red;
 }
 
+/* utility classes */
+
 .inline {
     display: inline;
 }
@@ -92,3 +94,10 @@ img {
     margin: 0 50px;    
 }
 
+.floatdiv{
+    float: right;
+}
+
+.margintop {
+    margin-top: 50px;
+}
