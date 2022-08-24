@@ -30,7 +30,11 @@
 .newbtn {
     border: 1px solid black;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 15px;
+}
+
+.newbtn:hover{
+    background-color: aliceblue;
 }
 
 /* Whack a mole */
@@ -38,8 +42,9 @@
 #grid {
     display: flex;
     flex-wrap: wrap;
-    width: 456px;
-    height: 456px;
+    width: 460px;
+    height: 460px;
+    border: 3px solid black;
 }
 
 img {

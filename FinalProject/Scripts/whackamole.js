@@ -2,10 +2,12 @@
 const grid = document.querySelector('#grid')
 let score = document.querySelector('#result')
 const timeLeft = document.querySelector('#time-left')
+const startBtnW = document.querySelector('.startBtnW')
 
-let result = 0
-let currentTime = 60
-let timerId = null
+let result;
+let currentTime;
+let timerId;
+let countDownTimerId;
 
 // creating grid
 function createBoard() {
@@ -19,7 +21,6 @@ function createBoard() {
 
 // assigning random grid and whacin it
 
-// Selecing random grid
 let cards = document.querySelectorAll('img')
 
 function selectingGrid() {
@@ -58,7 +59,7 @@ function countDown() {
     currentTime--
     timeLeft.textContent = currentTime
 
-    if (currentTime == 0) {
+    if (currentTime === 0) {
         clearInterval(countDownTimerId)
         clearInterval(timerId)
         remover()
@@ -66,11 +67,16 @@ function countDown() {
     }
 }
 
-let countDownTimerId = setInterval(countDown, 1000)
-
-
-
-window.addEventListener('DOMContentLoaded', () => {
+startBtnW.addEventListener('click', () => {
+    clearInterval(countDownTimerId)
+    clearInterval(timerId)
+    grid.innerHTML = ''
+    currentTime = 30
+    timeLeft.textContent = currentTime
+    countDownTimerId = setInterval(countDown, 1000)
+    result = 0
+    score.innerHTML = result
+    timerId = null
     createBoard()
     movingMole()
 })

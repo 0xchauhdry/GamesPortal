@@ -6,7 +6,6 @@
     
     <section >
         <h1>Minesweeper</h1>
-        <asp:Button id="btnStart" runat="server" OnClientClick="javascript: return startMinesweeper()" Text="Start" Height="30px" Width="50px"/>
         <hr>
 
         <div>
@@ -14,9 +13,9 @@
                 Flags:<span id="flags">0</span>
             </h2>
             <h2 class="inline right-margin">
-                Time:<span id="timer">00</span>
+                Time:<span id="timerM">00</span>
             </h2>
-            <h2 class="inline newbtn">
+            <h2 class="inline newbtn startBtnM">
                 Start
             </h2>
         </div>

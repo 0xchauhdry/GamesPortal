@@ -1,7 +1,13 @@
-﻿const mineField = document.querySelector("#pnlMineField");
+﻿const mineField = document.querySelector("#pnlMineField"),
+    startBtn = document.querySelector('.startBtnM'),
+    flags = document.querySelector('#flags'),
+    timer = document.querySelector('#timerM');
+
 
 let minelocation = [];
-let flagCount = 12;
+let flagCount;
+let timerCount;
+let TimerM;
 
 function createMineField() {
     for (let i = 1; i <= 9; i++) {
@@ -23,9 +29,13 @@ function mouseClick(e){
     if (e.button === 2) {
         if (!this.classList.contains("flaged")) {
             this.classList.add("flaged")
+            flagCount--
+            flags.innerHTML = flagCount;
         }
         else {
             this.classList.remove("flaged")
+            flagCount++
+            flags.innerHTML = flagCount;
         }
     }
     if (e.button === 0) {
@@ -142,7 +152,8 @@ function revealMines() {
 }
 
 function gameOver() {
-    alert('You lost, bitch')
+    alert('You lost, Dear')
+    clearInterval(TimerM)
     btnAll = document.querySelectorAll(".mineField");
     btnAll.forEach(e => {
         e.classList.add('noClick')
@@ -150,7 +161,12 @@ function gameOver() {
 }
 
 function gameWon(){
-    alert('You Won, GG')
+    alert('You Won in ' + timerCount + ' seconds')
+    clearInterval(TimerM)
+    btnAll = document.querySelectorAll(".mineField");
+    btnAll.forEach(e => {
+        e.classList.add('noClick')
+    })
 }
 
 function checkResults(){
@@ -171,25 +187,30 @@ function revealFirst(){
     for (let i=1; i<= 99; i++){
         let btn = btnAll[i]
         if (parseInt(btn.getAttribute('ngCount')) === 0){
+            btn.style.backgroundColor = 'white'
+            btn.classList.add('revealed')
             revealBlank(btn)
             break;
         }
     }
 }
 
-// function startMinesweeper(){
-//     document.addEventListener("contextmenu", function (e) { e.preventDefault(); }, false);
-//     createMineField();
-//     getMinesLocations();
-//     setMineLocation();
-//     addNeighbourCount();
-//     revealFirst();
-
-//     return true;
-// }
+function Timer() {
+    timerCount++
+    timer.textContent = timerCount
+}
 
 window.addEventListener('DOMContentLoaded', () => {
     document.addEventListener("contextmenu", function (e) { e.preventDefault(); }, false);
+})
+
+startBtn.addEventListener('click', () => {
+    mineField.innerHTML= ''
+    flagCount = 12;
+    flags.innerHTML = flagCount;
+    timerCount = 00
+    timer.textContent = timerCount;
+    TimerM = setInterval(Timer, 1000)
     createMineField();
     getMinesLocations();
     setMineLocation();

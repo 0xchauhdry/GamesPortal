@@ -14,7 +14,7 @@
             <h2 class="inline right-margin">
                 Time left:<span id="time-left">60</span>
             </h2>
-            <h2 class="inline newbtn">
+            <h2 class="inline newbtn startBtnW">
                 Start
             </h2>
         </div>

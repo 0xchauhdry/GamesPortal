@@ -13,9 +13,9 @@
                 Score:<span id="result">0</span>
             </h2>
             <h2 class="inline right-margin">
-                Time:<span id="timer">00</span>
+                Time: <span id="timerS">00</span>
             </h2>
-            <h2 class="inline newbtn">
+            <h2 class="inline newbtn startBtnS">
                 Start
             </h2>
         </div>
