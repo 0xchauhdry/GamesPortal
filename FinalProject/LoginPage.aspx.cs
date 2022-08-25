@@ -14,12 +14,12 @@ namespace FinalProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["adminusername"] != null && Session["adminpassword"] != null)
+            if (Session["adminusername"] != null)
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("AdminPage.aspx");
             }
 
-            if (Session["accountantusername"] != null && Session["accountantpassword"] != null)
+            if (Session["username"] != null)
             {
                 Response.Redirect("Default.aspx");
             }
@@ -48,8 +48,7 @@ namespace FinalProject
                 else
                 {
                     Session["adminusername"] = username;
-                    Session["adminpassword"] = passWord;
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("AdminPage.aspx");
                 }
             }
 
@@ -67,8 +66,7 @@ namespace FinalProject
                         }
                         else
                         {
-                            Session["accountantusername"] = username;
-                            Session["accountantpassword"] = passWord;
+                            Session["username"] = username;
                             Response.Redirect("Default.aspx");
                         }
                     }

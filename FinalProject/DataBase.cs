@@ -32,5 +32,14 @@ namespace FinalProject
             SDA.SelectCommand.ExecuteNonQuery();
             conn.Close();
         }
+
+        public void AddData(string username, string time, string result, string tblName)
+        {
+            conn.Open();
+            string query = "INSERT INTO " + tblName + " VALUES('" + username + "','" + time + "','" + result + "');";
+            SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
+            SDA.SelectCommand.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }

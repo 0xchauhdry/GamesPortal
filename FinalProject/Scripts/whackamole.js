@@ -60,9 +60,22 @@ function countDown() {
     if (currentTime === 0) {
         clearInterval(countDownTimerId)
         clearInterval(timerId)
+        addWdata(result,'Won','whackamoleGameData')
         removerM()
         alert('GAME OVER! Your final score is ' + result)
     }
+}
+
+function addWdata(time, result, tblname) {                                               
+    $.ajax({
+        type: "POST",
+        url: "Whackamole.aspx/UpdateDataW",
+        data: "{ time: '" + time + "',result: '" + result + "',tblname: '" + tblname + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+    });
 }
 
 startBtnW.addEventListener('click', () => {

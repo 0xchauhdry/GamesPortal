@@ -127,26 +127,42 @@ function moveInvader() {
     Invader()
 
     if (squares[hero].classList.contains('invader')) {
+        addSIdata(timerCountS,'Lost','spaceinvaderGameData')
         clearInterval(interval)
         alert('GAME OVER')
     }
     for (i = 0; i < 3; i++) {
         for (let j = 0; j < invader[i].length; j++) {
             if (invader[i][j] > 224) {
+                addSIdata(timerCountS,'Lost','spaceinvaderGameData')
                 clearInterval(interval)
                 alert('GAME OVER')
             }
         }
     }
     if (results === 30) {
+        addSIdata(timerCountS,'Won','spaceinvaderGameData')
         clearInterval(interval)
         alert('You have WON in ' + timerCountS + ' seconds');
+        
     }
 }
 
 function spaceTimer() {
     timerCountS++
     timerS.textContent = timerCountS
+}
+
+function addSIdata(time, result, tblname) {                                
+    $.ajax({
+        type: "POST",
+        url: "Spaceinvader.aspx/UpdateDataSI",
+        data: "{ time: '" + time + "',result: '" + result + "',tblname: '" + tblname + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+    });
 }
 
 window.addEventListener('DOMContentLoaded', () => {

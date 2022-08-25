@@ -11,7 +11,7 @@ namespace FinalProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["adminusername"] == null && Session["accountantusername"] == null)
+            if (Session["adminusername"] == null && Session["username"] == null)
             {
                 Response.Redirect("LogInPage.aspx");
             }

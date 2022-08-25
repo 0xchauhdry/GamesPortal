@@ -15,12 +15,12 @@ namespace FinalProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["adminusername"] != null && Session["adminpassword"] != null)
+            if (Session["adminusername"] != null)
             {
-                Response.Redirect("Default.aspx");
+                Response.Redirect("AdminPage.aspx");
             }
 
-            if (Session["accountantusername"] != null && Session["accountantpassword"] != null)
+            if (Session["username"] != null)
             {
                 Response.Redirect("Default.aspx");
             }
@@ -37,7 +37,8 @@ namespace FinalProject
 
             if (data.Rows.Count > 0)
             {
-                Response.Write("<script>alert('this username is not available!')</script>");
+                ClientScript.RegisterStartupScript(this.GetType(), "ssss", "<script>alert('this username is not available!')</script>");
+                //Response.Write("<script>alert('this username is not available!')</script>");
             }
             else
             {
