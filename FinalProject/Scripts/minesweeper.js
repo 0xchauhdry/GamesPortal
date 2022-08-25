@@ -219,6 +219,7 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 startBtn.addEventListener('click', () => {
+    clearInterval(TimerM)
     mineField.innerHTML= ''
     flagCount = 12;
     flags.innerHTML = flagCount;

@@ -129,6 +129,7 @@ function moveInvader() {
     if (squares[hero].classList.contains('invader')) {
         addSIdata(timerCountS,'Lost','spaceinvaderGameData')
         clearInterval(interval)
+        clearInterval(timerIdS)
         alert('GAME OVER')
     }
     for (i = 0; i < 3; i++) {
@@ -136,6 +137,7 @@ function moveInvader() {
             if (invader[i][j] > 224) {
                 addSIdata(timerCountS,'Lost','spaceinvaderGameData')
                 clearInterval(interval)
+                clearInterval(timerIdS)
                 alert('GAME OVER')
             }
         }
@@ -143,6 +145,7 @@ function moveInvader() {
     if (results === 30) {
         addSIdata(timerCountS,'Won','spaceinvaderGameData')
         clearInterval(interval)
+        clearInterval(timerIdS)
         alert('You have WON in ' + timerCountS + ' seconds');
         
     }

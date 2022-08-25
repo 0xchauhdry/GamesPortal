@@ -11,7 +11,7 @@
                 Score:<span id="result">0</span>
             </h2>
             <h2 class="inline right-margin">
-                Time left:<span id="time-left">60</span>
+                Time left:<span id="time-left">30</span>
             </h2>
             <h2 class="inline newbtn startBtnW">
                 Start
