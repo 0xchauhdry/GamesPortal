@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Whackamole.aspx.cs" Inherits="FinalProject.WebForm4" %>
+﻿<%@ Page Title="Whackamole" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Whackamole.aspx.cs" Inherits="FinalProject.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <hr class="margintop">
 </asp:Content>

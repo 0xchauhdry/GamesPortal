@@ -33,12 +33,11 @@ namespace FinalProject
             string Email = email.Text;
             string Name = name.Text;
 
-            DataTable data = new DataBase().Authentication(username);
+            DataTable data = new DataBase().getDataTable(username);
 
             if (data.Rows.Count > 0)
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "ssss", "<script>alert('this username is not available!')</script>");
-                //Response.Write("<script>alert('this username is not available!')</script>");
             }
             else
             {

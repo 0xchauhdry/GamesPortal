@@ -10,13 +10,13 @@ namespace FinalProject
 {
     public class DataBase
     {
-        static string conString = @"Server= CMDLHRLT938; Data Source=CMDLHRLT938;Initial Catalog=GamePortalData;Integrated Security=True";
+        static string conString = @"Server= CMDLHRLT938; Data Source=CMDLHRLT938;Initial Catalog=PortalData;Integrated Security=True";
         SqlConnection conn = new SqlConnection(conString);
 
-        public DataTable Authentication(string username)
+        public DataTable getDataTable(string username)
         {
             conn.Open();
-            string query = "SELECT * FROM userdata WHERE username='" + username + "';";
+            string query = "SELECT * FROM [Users] WHERE Username='" + username + "';";
             SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             SDA.Fill(dt);
@@ -27,16 +27,19 @@ namespace FinalProject
         public void AddUser(string name, string email, string username, string pass)
         {
             conn.Open();
-            string query = "INSERT INTO userdata VALUES('" + name + "','" + email + "','" + username + "','" + pass + "');";
+            string query = "INSERT INTO [Users] VALUES('" + name + "','" + email + "','" + username + "','" + pass + "');";
             SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
             SDA.SelectCommand.ExecuteNonQuery();
             conn.Close();
         }
 
-        public void AddData(string username, string time, string result, string tblName)
+        public void AddData(int userId, int gameId, int time, string result, int score)
         {
             conn.Open();
-            string query = "INSERT INTO " + tblName + " VALUES('" + username + "','" + time + "','" + result + "');";
+            DateTime now = DateTime.Now;
+            string timeNow = now.ToString("hh:mm:ss tt");
+            string dateNow = now.ToString("MMMM dd, yyyy");
+            string query = "INSERT INTO GameData (UserID,GameID,[Date],[Start Time],[Time],result,score) VALUES(" + userId + "," + gameId + ",'" + dateNow + "','" + timeNow + "','" + time + "','" + result + "','" + score + "');";
             SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
             SDA.SelectCommand.ExecuteNonQuery();
             conn.Close();

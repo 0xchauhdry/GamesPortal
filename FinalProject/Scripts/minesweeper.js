@@ -152,7 +152,7 @@ function revealMines() {
 }
 
 function gameOver() {
-    addDatatoDB(timerCount,'Lost','minesweeperGameData')
+    addDatatoDB(timerCount,'Lost',0)
     alert('You lost, Dear')
     clearInterval(TimerM)
     btnAll = document.querySelectorAll(".mineField");
@@ -162,7 +162,7 @@ function gameOver() {
 }
 
 function gameWon(){
-    addDatatoDB(timerCount,'Won','minesweeperGameData')
+    addDatatoDB(timerCount,'Won',69)
     alert('You Won in ' + timerCount + ' seconds')
     clearInterval(TimerM)
     btnAll = document.querySelectorAll(".mineField");
@@ -202,11 +202,11 @@ function Timer() {
     timer.textContent = timerCount
 }
 
-function addDatatoDB(time, result, tblname) {                                               
+function addDatatoDB(time, result, score) {                                               
     $.ajax({
         type: "POST",
         url: "Minesweeper.aspx/UpdateData",
-        data: "{ time: '" + time + "',result: '" + result + "',tblname: '" + tblname + "'}",
+        data: "{ time: '" + time + "',result: '" + result + "',score: '" + score + "'}",
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         async: "true",

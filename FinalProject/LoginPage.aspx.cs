@@ -32,18 +32,18 @@ namespace FinalProject
             string passWord = password.Text;
             if (usrStatus.SelectedValue == "Login As")
             {
-                Response.Write("<script defer>alert('You want to Login as Admin or User? Please Select one option to proceed')</script>");
+                ClientScript.RegisterStartupScript(this.GetType(), "ssss", "<script>alert('You want to Login as Admin or User? Please Select one option to proceed')</script>");
             }
 
             if (usrStatus.SelectedValue == "Admin")
             {
-                if (username != "chauhdry")
+                if (username != "ahmad")
                 {
-                    Response.Write("<script defer>alert('username is not correct!')</script>"); //works great
+                    ClientScript.RegisterStartupScript(this.GetType(), "ssss", "<script>alert('username is not correct!')</script>");
                 }
-                else if (passWord != "jinnah")
+                else if (passWord != "chauhdry")
                 {
-                    Response.Write("<script defer>alert('password is not correct!')</script>"); //works great
+                    ClientScript.RegisterStartupScript(this.GetType(), "ssss", "<script>alert('password is not correct!')</script>");
                 }
                 else
                 {
@@ -54,7 +54,7 @@ namespace FinalProject
 
             if (usrStatus.SelectedValue == "User")
             {
-                DataTable data = new DataBase().Authentication(username);
+                DataTable data = new DataBase().getDataTable(username);
 
                 if (data.Rows.Count > 0)
                 {
@@ -62,7 +62,7 @@ namespace FinalProject
                     {
                         if (passWord != row["password"].ToString())
                         {
-                            Response.Write("<script>alert('password is not correct!')</script>"); //works great
+                            ClientScript.RegisterStartupScript(this.GetType(), "ssss", "<script>alert('password is not correct!')</script>");
                         }
                         else
                         {
@@ -73,7 +73,7 @@ namespace FinalProject
                 }
                 else
                 {
-                    Response.Write("<script>alert('username is not correct!')</script>");
+                    ClientScript.RegisterStartupScript(this.GetType(), "ssss", "<script>alert('username is not correct!')</script>");
                 }
             }
         }

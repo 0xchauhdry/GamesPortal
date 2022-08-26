@@ -1,8 +1,8 @@
 ﻿#pnlMineField {
     display: flex;
     flex-wrap: wrap;
-    width: 455px;
-    height: 455px;
+    width: 456px;
+    height: 456px;
     background: white;
     border: 3px solid black;
 } 
@@ -42,8 +42,8 @@
 #gridWac {
     display: flex;
     flex-wrap: wrap;
-    width: 460px;
-    height: 460px;
+    width: 462px;
+    height: 462px;
     border: 3px solid black;
 }
 
@@ -56,8 +56,8 @@ img {
 #Space-grid {
     display: flex;
     flex-wrap: wrap;
-    width: 460px;
-    height: 460px;
+    width: 462px;
+    height: 462px;
     background: white;
     border: 5px solid black;
 }

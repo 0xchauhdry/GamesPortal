@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Spaceinvader.aspx.cs" Inherits="FinalProject.WebForm3" %>
+﻿<%@ Page Title="Spaceinvader" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Spaceinvader.aspx.cs" Inherits="FinalProject.WebForm3" %>
 <asp:Content ID="head2" ContentPlaceHolderID="head" runat="server">
     <hr class="margintop">
 </asp:Content>

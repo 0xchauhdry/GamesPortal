@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace FinalProject
 {
@@ -18,9 +19,16 @@ namespace FinalProject
         }
 
         [WebMethod]
-        public static void UpdateDataW(string time, string result, string tblname)
+        public static void UpdateDataW(int time, string result, int score)
         {
-            new DataBase().AddData(UserName, time, result, tblname);
+            int ID = 1;
+            DataTable data = new DataBase().getDataTable(UserName);
+            foreach (DataRow row in data.Rows)
+            {
+                ID = Convert.ToInt32(row["ID"]);
+            }
+
+            new DataBase().AddData(ID, 3, time, result, score);
         }
     }
 }

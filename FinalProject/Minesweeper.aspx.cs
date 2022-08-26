@@ -17,10 +17,19 @@ namespace FinalProject
             UserName = Session["username"].ToString();
         }
 
+
+
         [WebMethod]
-        public static void UpdateData(string time, string result, string tblname)
+        public static void UpdateData(int time, string result, int score)
         {
-            new DataBase().AddData(UserName, time, result, tblname);
+            int ID = 1;
+            DataTable data = new DataBase().getDataTable(UserName);
+            foreach (DataRow row in data.Rows)
+            {
+                ID = Convert.ToInt32(row["ID"]);
+            }
+
+            new DataBase().AddData(ID,1,time,result,score);
         }
     }
 }
