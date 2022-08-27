@@ -17,7 +17,7 @@ namespace FinalProject
         {
             if (Session["adminusername"] != null)
             {
-                Response.Redirect("AdminPage.aspx");
+                Response.Redirect("Admin.aspx");
             }
 
             if (Session["username"] != null)

@@ -15,7 +15,10 @@ namespace FinalProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            UserName = Session["username"].ToString();
+            if (Session["username"] != null)
+            {
+                UserName = Session["username"].ToString();
+            }
         }
 
         [WebMethod]

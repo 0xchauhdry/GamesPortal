@@ -14,10 +14,11 @@ namespace FinalProject
         public static string UserName;
         protected void Page_Load(object sender, EventArgs e)
         {
-            UserName = Session["username"].ToString();
+            if (Session["username"] != null)
+            {
+                UserName = Session["username"].ToString();
+            }
         }
-
-
 
         [WebMethod]
         public static void UpdateData(int time, string result, int score)

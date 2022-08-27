@@ -24,6 +24,17 @@ namespace FinalProject
             return dt;
         }
 
+        public DataTable getDatatable(int gameid) 
+        { 
+            conn.Open();
+            string query = "select [users].[Name],[Games].[GameName],[GameData].[Time],[GameData].[score] from GameData join games on GameData.GameID = games.id join users on GameData.UserID = users.id where gamedata.gameid = " + gameid + " and gamedata.Result = 'Won' ; ";
+            SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
+            DataTable dt = new DataTable();
+            SDA.Fill(dt);
+            conn.Close();
+            return dt;
+        }
+
         public void AddUser(string name, string email, string username, string pass)
         {
             conn.Open();
@@ -43,6 +54,23 @@ namespace FinalProject
             SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
             SDA.SelectCommand.ExecuteNonQuery();
             conn.Close();
+        }
+
+        public string JsonConverter(DataTable table)
+        {
+            JavaScriptSerializer jsSerializer = new JavaScriptSerializer();
+            List<Dictionary<string, object>> parentRow = new List<Dictionary<string, object>>();
+            Dictionary<string, object> childRow;
+            foreach (DataRow row in table.Rows)
+            {
+                childRow = new Dictionary<string, object>();
+                foreach (DataColumn col in table.Columns)
+                {
+                    childRow.Add(col.ColumnName, row[col]);
+                }
+                parentRow.Add(childRow);
+            }
+            return jsSerializer.Serialize(parentRow);
         }
     }
 }
