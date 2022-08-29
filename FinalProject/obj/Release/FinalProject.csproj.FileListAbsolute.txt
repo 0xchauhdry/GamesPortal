@@ -1,0 +1,7 @@
+C:\Users\ahmad.saleem\source\repos\FinalProject\FinalProject\bin\FinalProject.dll.config
+C:\Users\ahmad.saleem\source\repos\FinalProject\FinalProject\bin\FinalProject.dll
+C:\Users\ahmad.saleem\source\repos\FinalProject\FinalProject\bin\FinalProject.pdb
+C:\Users\ahmad.saleem\source\repos\FinalProject\FinalProject\obj\Release\FinalProject.csproj.AssemblyReference.cache
+C:\Users\ahmad.saleem\source\repos\FinalProject\FinalProject\obj\Release\FinalProject.csproj.CoreCompileInputs.cache
+C:\Users\ahmad.saleem\source\repos\FinalProject\FinalProject\obj\Release\FinalProject.dll
+C:\Users\ahmad.saleem\source\repos\FinalProject\FinalProject\obj\Release\FinalProject.pdb

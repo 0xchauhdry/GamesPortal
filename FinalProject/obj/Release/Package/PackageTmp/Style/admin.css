@@ -1,0 +1,22 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#admin-page {
+    width: 60%;
+    margin: 30px auto;
+}
+
+h1{
+    text-align: center;
+    margin: 20px;
+}
+
+.floatdiv{
+    float: right;
+    background-color: aqua;
+    border: 1px solid black;
+    padding: 10px;
+}

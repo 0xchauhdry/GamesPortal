@@ -22,7 +22,7 @@ namespace FinalProject
         }
 
         [WebMethod]
-        public static void UpdateDataW(int time, string result, int score)
+        public static void UpdateDataW(int time, int clicks, int score)
         {
             int ID = 1;
             DataTable data = new DataBase().getDataTable(UserName);
@@ -31,7 +31,7 @@ namespace FinalProject
                 ID = Convert.ToInt32(row["ID"]);
             }
 
-            new DataBase().AddData(ID, 3, time, result, score);
+            new DataBase().AddDataWM(ID, 3, time, clicks, score);
         }
     }
 }

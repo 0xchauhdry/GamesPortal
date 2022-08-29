@@ -30,7 +30,7 @@ namespace FinalProject
                 ID = Convert.ToInt32(row["ID"]);
             }
 
-            new DataBase().AddData(ID, 2, time, result, score);
+            new DataBase().AddDataSI(ID, 2, time, result, score);
         }
     }
 }

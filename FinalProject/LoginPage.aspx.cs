@@ -37,11 +37,11 @@ namespace FinalProject
 
             if (usrStatus.SelectedValue == "Admin")
             {
-                if (username != "ahmad")
+                if (username != "admin")
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "ssss", "<script>alert('username is not correct!')</script>");
                 }
-                else if (passWord != "chauhdry")
+                else if (passWord != "123")
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "ssss", "<script>alert('password is not correct!')</script>");
                 }

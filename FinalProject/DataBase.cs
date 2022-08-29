@@ -27,7 +27,7 @@ namespace FinalProject
         public DataTable getDatatable(int gameid) 
         { 
             conn.Open();
-            string query = "select [users].[Name],[Games].[GameName],[GameData].[Time],[GameData].[score] from GameData join games on GameData.GameID = games.id join users on GameData.UserID = users.id where gamedata.gameid = " + gameid + " and gamedata.Result = 'Won' ; ";
+            string query = "select [users].[username] as [Name],SUM(GameData.RatingPoints) as Rating from GameData join users on GameData.UserID = users.id where gamedata.gameid = "+ gameid + " group by[users].[username] order by Rating DESC; ";
             SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
             DataTable dt = new DataTable();
             SDA.Fill(dt);
@@ -50,7 +50,49 @@ namespace FinalProject
             DateTime now = DateTime.Now;
             string timeNow = now.ToString("hh:mm:ss tt");
             string dateNow = now.ToString("MMMM dd, yyyy");
-            string query = "INSERT INTO GameData (UserID,GameID,[Date],[Start Time],[Time],result,score) VALUES(" + userId + "," + gameId + ",'" + dateNow + "','" + timeNow + "','" + time + "','" + result + "','" + score + "');";
+            double ratingPoints;
+            if (result == "Won")
+            {
+                ratingPoints = 5.5 + (1 - ((time)/ 999.0)) * 3.5 + (1 - (score / 100.0)) * 1;
+            } else
+            {
+                ratingPoints = -6 - (1 - ((time) / 999.0)) * 3.5 + (1 - (score / 100.0)) * 1;
+            }
+            string query = "INSERT INTO GameData (UserID,GameID,[Date],[Start Time],[Time],result,score,RatingPoints) VALUES(" + userId + "," + gameId + ",'" + dateNow + "','" + timeNow + "','" + time + "','" + result + "','" + score + "','" + ratingPoints + "');";
+            SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
+            SDA.SelectCommand.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void AddDataSI(int userId, int gameId, int time, string result, int score)
+        {
+            conn.Open();
+            DateTime now = DateTime.Now;
+            string timeNow = now.ToString("hh:mm:ss tt");
+            string dateNow = now.ToString("MMMM dd, yyyy");
+            double ratingPoints;
+            if (result == "Won")
+            {
+                ratingPoints = 5.5 + (1 - (time / 40.0)) * 4.5;
+            }
+            else
+            {
+                ratingPoints = -3 - (time / 40.0) * 4.5 - (1-(score / 30.0)) * 2;
+            }
+            string query = "INSERT INTO GameData (UserID,GameID,[Date],[Start Time],[Time],result,score,RatingPoints) VALUES(" + userId + "," + gameId + ",'" + dateNow + "','" + timeNow + "','" + time + "','" + result + "','" + score + "','" + ratingPoints + "');";
+            SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
+            SDA.SelectCommand.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void AddDataWM(int userId, int gameId, int time, int clicks, int score)
+        {
+            conn.Open();
+            DateTime now = DateTime.Now;
+            string timeNow = now.ToString("hh:mm:ss tt");
+            string dateNow = now.ToString("MMMM dd, yyyy");
+            double ratingPoints = .5 + (Convert.ToDouble(score) / Convert.ToDouble(clicks))*9.5;
+            string query = "INSERT INTO GameData (UserID,GameID,[Date],[Start Time],[Time],result,score,clicks,RatingPoints) VALUES(" + userId + "," + gameId + ",'" + dateNow + "','" + timeNow + "','" + time + "','Won','" + score + "','" + clicks + "','" + ratingPoints + "');";
             SqlDataAdapter SDA = new SqlDataAdapter(query, conn);
             SDA.SelectCommand.ExecuteNonQuery();
             conn.Close();

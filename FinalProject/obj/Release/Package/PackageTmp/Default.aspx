@@ -15,7 +15,7 @@
             <img src="img/minesweeper.jfif" alt="minesweeper" width="100%">
             
             <p>
-                <a class="btn btn-default" href="~/Minesweeper.aspx">Lets Play</a>
+                <a class="btn btn-default" href="/Minesweeper.aspx">Lets Play</a>
             </p>
         </div>
         <div class="col-md-4 text-center">
@@ -26,7 +26,7 @@
             </p>
             <img src="img/whackamole.jfif" alt="whackamole" width="100%">
             <p>
-                <a class="btn btn-default" href="~/Whackamole.aspx">Lets Play</a>
+                <a class="btn btn-default" href="/Whackamole.aspx">Lets Play</a>
             </p>
         </div>
         <div class="col-md-4 text-center">
@@ -37,7 +37,7 @@
             </p>
             <img src="img/spaceinvader.jfif" alt="spaceinvader" width="100%">
             <p>
-                <a class="btn btn-default" href="~/Spaceinvader.aspx">Lets Play</a>
+                <a class="btn btn-default" href="/Spaceinvader.aspx">Lets Play</a>
             </p>
         </div>
     </div>
