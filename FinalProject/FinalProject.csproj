@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
@@ -91,42 +92,49 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUpPage.aspx.cs">
       <DependentUpon>SignUpPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SignUpPage.aspx.designer.cs">
       <DependentUpon>SignUpPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Minesweeper.aspx.cs">
       <DependentUpon>Minesweeper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Minesweeper.aspx.designer.cs">
       <DependentUpon>Minesweeper.aspx</DependentUpon>
     </Compile>
     <Compile Include="Spaceinvader.aspx.cs">
       <DependentUpon>Spaceinvader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Spaceinvader.aspx.designer.cs">
       <DependentUpon>Spaceinvader.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Whackamole.aspx.cs">
       <DependentUpon>Whackamole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Whackamole.aspx.designer.cs">
       <DependentUpon>Whackamole.aspx</DependentUpon>
@@ -156,7 +164,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1212</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/MineSweeper</IISUrl>
+          <IISUrl>http://localhost/MineSweeper22</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -4,3 +4,4 @@ C:\Users\ahmad.saleem\source\repos\FinalProject\FinalProject\bin\FinalProject.pd
 C:\Users\ahmad.saleem\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\ahmad.saleem\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.dll
 C:\Users\ahmad.saleem\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\ahmad.saleem\source\repos\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.AssemblyReference.cache

@@ -25,7 +25,7 @@
             
             <asp:button id="loginBtn" CssClass="btn" runat="server" onclick="LogIn" text="LogIn" />
      
-            <a class="linkcenter" href="/SignUpPage.aspx">Need to sign up? Click here</a>
+            <a class="linkcenter" href="./SignUpPage.aspx">Need to sign up? Click here</a>
         </div>
         
     </form>
